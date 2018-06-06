@@ -28,9 +28,9 @@ go get github.com/jakewarren/backhub
 ## Usage
 ## Acknowledgements
 
-https://github.com/cinience/GitStalker
-https://github.com/aprescott/gist-backup
-https://github.com/iamsalnikov/gorespect
+https://github.com/cinience/GitStalker  
+https://github.com/aprescott/gist-backup  
+https://github.com/iamsalnikov/gorespect  
 
 ## Changes
 
