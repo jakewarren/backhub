@@ -25,7 +25,6 @@ Download the latest release from [https://github.com/jakewarren/backhub/releases
 go get github.com/jakewarren/backhub
 ```
 
-## Usage
 ## Acknowledgements
 
 https://github.com/cinience/GitStalker  
