@@ -44,10 +44,10 @@ func (cs *ConfigStorage) Load() *Config {
 	defer cs.m.RUnlock()
 
 	file, err := os.Open(cs.FilePath)
-	defer file.Close()
 	if err != nil {
 		return c
 	}
+	defer file.Close()
 
 	decoder := json.NewDecoder(file)
 	decoder.Decode(&c)
@@ -65,7 +65,6 @@ func (cs *ConfigStorage) Save(c *Config) error {
 	defer cs.m.Unlock()
 
 	file, err := os.Open(cs.FilePath)
-	defer file.Close()
 
 	if os.IsNotExist(err) {
 		file, err = os.Create(cs.FilePath)
@@ -74,6 +73,7 @@ func (cs *ConfigStorage) Save(c *Config) error {
 	if err != nil {
 		return err
 	}
+	defer file.Close()
 
 	encoder := json.NewEncoder(file)
 	err = encoder.Encode(c)
