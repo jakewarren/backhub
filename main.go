@@ -77,20 +77,20 @@ func main() {
 	starredRepos := app.getGithubStars()
 	for _, r := range starredRepos {
 		swg.Add()
-		go func() {
+		go func(r string) {
 			app.syncRepo("starred", r)
 			defer swg.Done()
-		}()
+		}(r)
 	}
 
 	// backup user repos
 	userRepos := app.getGithubRepos()
 	for _, r := range userRepos {
 		swg.Add()
-		go func() {
+		go func(r string) {
 			app.syncRepo("repos", r)
 			defer swg.Done()
-		}()
+		}(r)
 	}
 
 	// backup starred gists

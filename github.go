@@ -63,10 +63,9 @@ func (a *App) getGithubStars() []string {
 			log.Fatal(err)
 		}
 
-		for _,r := range repos{
+		for _, r := range repos {
 			starredRepos = append(starredRepos, *r.Repository.FullName)
 		}
-
 
 		if resp.NextPage == 0 {
 			break
@@ -91,7 +90,7 @@ func (a *App) getGithubRepos() []string {
 			log.Fatal(err)
 		}
 
-		for _,r := range repos{
+		for _, r := range repos {
 			userRepos = append(userRepos, *r.FullName)
 		}
 
@@ -151,4 +150,3 @@ func (a *App) getStarredGists() []*github.Gist {
 
 	return starredGists
 }
-
