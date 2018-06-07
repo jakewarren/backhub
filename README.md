@@ -24,6 +24,9 @@ Download the latest release from [https://github.com/jakewarren/backhub/releases
 ```
 go get github.com/jakewarren/backhub
 ```
+## Usage
+
+When you first run `backhub` the program will prompt you to create a token. The program will then create four directories in the current working directory and clone/pull all personal & starred repos, and personal & starred Gists.
 
 ## Acknowledgements
 
